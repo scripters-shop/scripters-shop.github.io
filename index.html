@@ -22,268 +22,252 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="canonical" href="https://scripters-shop.github.io" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* Define your color variables */
         :root {
-            --tether-green: #26A17B;
-            --tether-dark: #121212;
-            --tether-light: #F2F4F8;
-            --tether-accent: #4A90E2;
-            --tether-secondary: #9B9B9B;
-            --tether-hover: #1C1C1C;
-            --primary-bg: #171717;
-            --primary-text: #E1E1E1;
-            --highlight-color: #29B6F6;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --card-hover: rgba(0, 0, 0, 0.2);
-            --transition: all 0.3s ease-in-out;
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --white: #fff;
+            --black: #000;
+            --body-bg: #f5f5f5;
+            --body-color: #212529;
+            --transition: all 0.3s ease;
         }
 
         body {
-            background-color: var(--primary-bg);
-            color: var(--primary-text);
             font-family: 'Roboto', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--body-color);
             margin: 0;
             padding: 0;
+            transition: var(--transition);
         }
 
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            position: relative; /* Changed from fixed to relative */
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
-            background-color: var(--highlight-color);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
         }
 
-        .navbar-brand i {
-            color: var(--primary-text);
+        .navbar-brand {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand:hover {
+            color: var(--light-color);
         }
 
         .navbar-nav .nav-link {
-            color: var(--primary-text) !important;
-            transition: color 0.3s;
+            color: var(--white) !important;
+            font-weight: 500;
+            transition: var(--transition);
         }
 
         .navbar-nav .nav-link:hover {
-            color: var(--tether-green) !important;
+            color: var(--light-color) !important;
         }
 
         .hero {
-            background: linear-gradient(145deg, #1E1E1E, #333);
-            padding: 120px 0;
+            background: linear-gradient(145deg, var(--primary-color), var(--info-color));
+            padding: 8rem 0;
             text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 0; /* Removed border-radius for a cleaner look */
+            box-shadow: none; /* Removed box-shadow for a cleaner look */
         }
 
         .hero h1 {
-            color: var(--primary-text);
+            font-size: 3.5rem;
             font-weight: 700;
-            font-size: 48px;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            color: var(--tether-secondary);
-            font-size: 20px;
-            max-width: 600px;
-            margin: auto;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
 
         .btn-primary {
-            background-color: var(--tether-green);
-            border-color: var(--tether-green);
+            background-color: var(--success-color);
+            border-color: var(--success-color);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
         }
 
         .btn-primary:hover {
-            background-color: #007b5e;
-            border-color: #007b5e;
+            background-color: #1e7e34;
+            border-color: #1c7430;
         }
 
         .card {
-            background-color: var(--primary-bg);
-            border: 1px solid var(--highlight-color);
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .card-title {
-            color: var(--primary-text);
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .projects {
-            padding: 50px 0;
-            background-color: var(--primary-bg);
+            padding: 5rem 0;
+            background-color: var(--body-bg);
         }
 
         .projects .card-body {
-            padding: 30px;
+            padding: 2rem;
         }
 
         footer {
-            background-color: var(--primary-bg);
-            color: var(--primary-text);
-            padding: 50px 0;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
         }
 
         footer a {
-            color: var(--primary-text);
-            transition: color 0.3s;
+            color: var(--light-color);
+            transition: var(--transition);
         }
 
         footer a:hover {
-            color: var(--tether-green);
+            color: var(--white);
         }
 
         .social-links a {
-            font-size: 28px;
-            margin-right: 20px;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: var(--transition);
         }
 
         .social-links a:hover {
-            color: var(--highlight-color);
-        }
-
-        .container {
-            max-width: 1200px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .btn-lg {
-                font-size: 16px;
-                padding: 12px 30px;
-            }
+            color: var(--primary-color);
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Scripters Shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contribute">Contribute</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/scripters-shop" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <section id="home" class="hero">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-code text-light"></i> Scripters Shop
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contribute">Contribute</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/scripters-shop" target="_blank">
-                            <i class="fab fa-github text-light"></i> GitHub
-                        </a>
-                    </li>
-                </ul>
+            <h1>Welcome to Scripters Shop</h1>
+            <p class="lead">Explore Tether-powered projects and join the blockchain revolution today. Shape the future of decentralized finance with us.</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="#projects" class="btn btn-primary btn-lg">Explore Projects</a>
+                <a href="https://scripters.shop/" class="btn btn-primary btn-lg">Shop Now</a>
+                <a href="https://github.com/scripters-shop" class="btn btn-outline-primary btn-lg">View on GitHub</a>
             </div>
         </div>
-    </nav>
-</header>
+    </section>
 
-<section id="home" class="hero">
-    <div class="container">
-        <h1>Welcome to Scripters Shop</h1>
-        <p class="lead">Explore Tether-powered projects and join the blockchain revolution today. Shape the future of decentralized finance with us.</p>
-        <div class="d-flex justify-content-center gap-4">
-            <a href="#projects" class="btn btn-primary btn-lg">Explore Projects</a>
-            <a href="https://scripters.shop/" class="btn btn-primary btn-lg">Shop Now</a>
-            <a href="https://github.com/scripters-shop" class="btn btn-outline-primary btn-lg">View on GitHub</a>
-        </div>
-    </div>
-</section>
-
-<section id="projects" class="projects">
-    <div class="container">
-        <h2 class="text-center text-light mb-5">Our Tether-Powered Projects</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">SwapUSDT</h3>
-                        <p class="card-text">A decentralized protocol powered by Tether. Secure liquidity provision and asset trading. Join us today!</p>
-                        <div class="d-flex gap-3">
-                            <a href="https://scripters-shop.github.io/SwapUSDT/" class="btn btn-primary">Launch App</a>
-                            <a href="https://github.com/scripters-shop/SwapUSDT" class="btn btn-outline-secondary">
-                                <i class="fab fa-github"></i> Repository
-                            </a>
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="text-center text-dark mb-5">Our Tether-Powered Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">SwapUSDT</h3>
+                            <p class="card-text">A decentralized protocol powered by Tether. Secure liquidity provision and asset trading. Join us today!</p>
+                            <div class="d-flex gap-3">
+                                <a href="https://scripters-shop.github.io/SwapUSDT/" class="btn btn-primary">Launch App</a>
+                                <a href="https://github.com/scripters-shop/SwapUSDT" class="btn btn-outline-secondary">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Coming Soon</h3>
+                            <p class="card-text">Stay tuned for more Tether-powered projects. Follow us on GitHub for the latest updates!</p>
+                            <a href="https://github.com/scripters-shop" class="btn btn-outline-primary">Follow Updates</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title">Coming Soon</h3>
-                        <p class="card-text">Stay tuned for more Tether-powered projects. Follow us on GitHub for the latest updates!</p>
-                        <a href="https://github.com/scripters-shop" class="btn btn-outline-primary">Follow Updates</a>
-                    </div>
+        </div>
+    </section>
+
+    <section id="contribute" class="contribute">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4 text-dark">Contribute to Our Projects</h2>
+                    <p class="lead mb-4">Join the community to contribute code, report issues, and enhance the ecosystem. Together, we will shape the future of decentralized finance!</p>
+                    <ul class="list-unstyled text-dark">
+                        <li><i class="fas fa-code-branch text-primary me-2"></i> Fork our repositories</li>
+                        <li><i class="fas fa-code text-primary me-2"></i> Submit pull requests</li>
+                        <li><i class="fas fa-bug text-primary me-2"></i> Report issues</li>
+                    </ul>
+                    <a href="https://github.com/scripters-shop" class="btn btn-primary">Start Contributing</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/252px-Tether_Logo.svg.png?height=400&width=600" alt="Tether Logo" class="img-fluid">
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contribute" class="contribute">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="mb-4 text-light">Contribute to Our Projects</h2>
-                <p class="lead mb-4">Join the community to contribute code, report issues, and enhance the ecosystem. Together, we will shape the future of decentralized finance!</p>
-                <ul class="list-unstyled text-light">
-                    <li><i class="fas fa-code-branch text-primary me-2"></i> Fork our repositories</li>
-                    <li><i class="fas fa-code text-primary me-2"></i> Submit pull requests</li>
-                    <li><i class="fas fa-bug text-primary me-2"></i> Report issues</li>
-                </ul>
-                <a href="https://github.com/scripters-shop" class="btn btn-primary">Start Contributing</a>
-            </div>
-            <div class="col-lg-6">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/252px-Tether_Logo.svg.png?height=400&width=600" alt="Tether Logo" class="img-fluid">
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Scripters Shop | Powered by Tether</p>
+            <div class="social-links">
+                <a href="https://twitter.com/scripters_shop" target="_blank" class="text-light">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/scripters-shop" target="_blank" class="text-light">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </div>
-    </div>
-</section>
-<div class="MuiBox-root jss172"><div class="MuiBox-root jss173"><div class="MuiBox-root jss174"><h3 class="MuiTypography-root xsh4 MuiTypography-h3 MuiTypography-alignCenter">Widespread adoption</h3><div class="MuiBox-root jss175"><p class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter">From being the first, to the most used, stablecoin, and one of the most traded tokens by volume, Tether tokens have come a long way. Tether tokens are today the most widely adopted stablecoins across major exchanges, OTC desks, and wallets, including:</p></div></div><div class="MuiBox-root jss176 jss165"><div class="MuiBox-root jss177 jss166"><div class="MuiBox-root jss178 jss167"><div class="MuiBox-root jss179"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://big.one/en/user/new?code=9NWMBOKN" target="blank"><div class="MuiBox-root jss180" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6anogdEx2MQinkoaQzpAUK/06ee3e8731010d428e93a5ff35d9a01f/bigone__3_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://bingx.com/" target="blank"><div class="MuiBox-root jss181" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/3O640hLhZajNxAmaQ8TAGo/6b80018dc8a69f825a848fb398070fef/BingX.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.bitfinex.com/" target="blank"><div class="MuiBox-root jss182" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/57RuQFi02hQYILBYGf6Z5P/fc7df33d75251fb90a1bfd8ceb164c44/Bitfinex.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://bitcoinvn.io/" target="blank"><div class="MuiBox-root jss183" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/37N3HO6HMmZAGoVbmqkK0j/f2c7db515c9afa98004046534139713b/BitcoinVN.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.btcex.com/" target="blank"><div class="MuiBox-root jss184" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6aKizt5i2HdYPVyjsJgtWp/7adcd080be65947a46ac504064676ba5/BTCEX__1_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.btse.com/" target="blank"><div class="MuiBox-root jss185" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/q7mlRH188z6Ndt96UbbOg/cc9e4538bdb87dc0201e166cff91aa0b/BTSE__1_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://cobo.com/" target="blank"><div class="MuiBox-root jss186" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/24eRwLiyGELlW2ZzQ0qDF9/912ad6f1d4beafed95406017501f56f1/Cobo.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.coinbase.com/" target="blank"><div class="MuiBox-root jss187" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/38LmOBCwJMnQguBFuRnfgO/e809fc43670d643b36a0356bbb7a4f20/Coinbase.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.coinstore.com/" target="blank"><div class="MuiBox-root jss188" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6eulriwFaZ4g98aaoy7ALj/06e90a933a49f5e647283a4bd0e812c5/Coinstore.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.digifinex.com/" target="blank"><div class="MuiBox-root jss189" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/PzAut1ikYUvRpTryJ5Iue/52ea28ad6bb0da58cb9f7a9201dfaea1/digifinex.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://enordigital.com/markets" target="blank"><div class="MuiBox-root jss190" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/19FVvkinhnF5TZnqPLFDkJ/789cc14f55503af9c9d2ffcbd44e2b7e/enor.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.gate.io/" target="blank"><div class="MuiBox-root jss191" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/53MZgW317s65VHJtfNuQns/41375fd83ca942854728b735a143e00e/gate.io.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://hitbtc.com/" target="blank"><div class="MuiBox-root jss192" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/QJrRyMEUPFCqEtwkPYQ7n/79dea713523ff40ccc5fb74c053d9f5d/hitbtc.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.huobi.com/en-us/" target="blank"><div class="MuiBox-root jss193" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/vZeOfJTg9nBeMllgLx5PH/4eff5ed7ad28e5d8b52012481c798a72/huobi_global.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.kraken.com/" target="blank"><div class="MuiBox-root jss194" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/7opEi7lEaTUtSkPpo5ujof/b49be22ca30d972872d4a1cd1846738a/kraken.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.kucoin.com/" target="blank"><div class="MuiBox-root jss195" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/3IMCVXlw9uvVPqVJ6EsJib/9a28fe477f76371e4f6fbbdf512ca24b/kucoin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.mexc.com/" target="blank"><div class="MuiBox-root jss196" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/124T3LDMFludFcpGv9kvqC/cd430f381adc4a63f2e4196fb5744d50/mexcglobal.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.okcoin.com/" target="blank"><div class="MuiBox-root jss197" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/4P3kbLAkwsVNNt6EkGQ02R/9e52b66a76b60aa758c1934927e5cb3d/okcoin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.okx.com/" target="blank"><div class="MuiBox-root jss198" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/5TaWExZ6P7v80IJ2JHsnru/aab2564b976180480aeeefd9d75c3c79/OKX.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://poloniex.com/" target="blank"><div class="MuiBox-root jss199" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/4WF6qzXjhCXuYb03dTtERm/f194be96e61b785327ab4a99018d7614/Poloniex-2021.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.poolin.com/" target="blank"><div class="MuiBox-root jss200" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/5VCglYPUdsx0y91CmWWwtc/e6b1f78938982d69cfdf4ddad79d856d/Poolin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.xt.com/" target="blank"><div class="MuiBox-root jss201" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/2qEM2en1rEjwlxD2J24u54/a4f8aa75d871c8db2555af6d99a81efd/xt.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://whitebit.com/" target="blank"><div class="MuiBox-root jss202" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6oqaqrL1uvMgSts4NVB0Xc/a3c5648721670c0cd822ec9f5862e682/WhiteBIT.svg" alt="logo"></div></a></div></div><div class="MuiBox-root jss203 jss168"><div class="MuiBox-root jss204"><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://big.one/en/user/new?code=9NWMBOKN" target="blank"><div class="MuiBox-root jss205" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6anogdEx2MQinkoaQzpAUK/06ee3e8731010d428e93a5ff35d9a01f/bigone__3_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://bingx.com/" target="blank"><div class="MuiBox-root jss206" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/3O640hLhZajNxAmaQ8TAGo/6b80018dc8a69f825a848fb398070fef/BingX.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.bitfinex.com/" target="blank"><div class="MuiBox-root jss207" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/57RuQFi02hQYILBYGf6Z5P/fc7df33d75251fb90a1bfd8ceb164c44/Bitfinex.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://bitcoinvn.io/" target="blank"><div class="MuiBox-root jss208" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/37N3HO6HMmZAGoVbmqkK0j/f2c7db515c9afa98004046534139713b/BitcoinVN.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.btcex.com/" target="blank"><div class="MuiBox-root jss209" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6aKizt5i2HdYPVyjsJgtWp/7adcd080be65947a46ac504064676ba5/BTCEX__1_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.btse.com/" target="blank"><div class="MuiBox-root jss210" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/q7mlRH188z6Ndt96UbbOg/cc9e4538bdb87dc0201e166cff91aa0b/BTSE__1_.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://cobo.com/" target="blank"><div class="MuiBox-root jss211" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/24eRwLiyGELlW2ZzQ0qDF9/912ad6f1d4beafed95406017501f56f1/Cobo.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.coinbase.com/" target="blank"><div class="MuiBox-root jss212" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/38LmOBCwJMnQguBFuRnfgO/e809fc43670d643b36a0356bbb7a4f20/Coinbase.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.coinstore.com/" target="blank"><div class="MuiBox-root jss213" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6eulriwFaZ4g98aaoy7ALj/06e90a933a49f5e647283a4bd0e812c5/Coinstore.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.digifinex.com/" target="blank"><div class="MuiBox-root jss214" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/PzAut1ikYUvRpTryJ5Iue/52ea28ad6bb0da58cb9f7a9201dfaea1/digifinex.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://enordigital.com/markets" target="blank"><div class="MuiBox-root jss215" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/19FVvkinhnF5TZnqPLFDkJ/789cc14f55503af9c9d2ffcbd44e2b7e/enor.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.gate.io/" target="blank"><div class="MuiBox-root jss216" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/53MZgW317s65VHJtfNuQns/41375fd83ca942854728b735a143e00e/gate.io.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://hitbtc.com/" target="blank"><div class="MuiBox-root jss217" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/QJrRyMEUPFCqEtwkPYQ7n/79dea713523ff40ccc5fb74c053d9f5d/hitbtc.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.huobi.com/en-us/" target="blank"><div class="MuiBox-root jss218" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/vZeOfJTg9nBeMllgLx5PH/4eff5ed7ad28e5d8b52012481c798a72/huobi_global.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.kraken.com/" target="blank"><div class="MuiBox-root jss219" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/7opEi7lEaTUtSkPpo5ujof/b49be22ca30d972872d4a1cd1846738a/kraken.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.kucoin.com/" target="blank"><div class="MuiBox-root jss220" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/3IMCVXlw9uvVPqVJ6EsJib/9a28fe477f76371e4f6fbbdf512ca24b/kucoin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.mexc.com/" target="blank"><div class="MuiBox-root jss221" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/124T3LDMFludFcpGv9kvqC/cd430f381adc4a63f2e4196fb5744d50/mexcglobal.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.okcoin.com/" target="blank"><div class="MuiBox-root jss222" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/4P3kbLAkwsVNNt6EkGQ02R/9e52b66a76b60aa758c1934927e5cb3d/okcoin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.okx.com/" target="blank"><div class="MuiBox-root jss223" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/5TaWExZ6P7v80IJ2JHsnru/aab2564b976180480aeeefd9d75c3c79/OKX.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://poloniex.com/" target="blank"><div class="MuiBox-root jss224" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/4WF6qzXjhCXuYb03dTtERm/f194be96e61b785327ab4a99018d7614/Poloniex-2021.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.poolin.com/" target="blank"><div class="MuiBox-root jss225" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/5VCglYPUdsx0y91CmWWwtc/e6b1f78938982d69cfdf4ddad79d856d/Poolin.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://www.xt.com/" target="blank"><div class="MuiBox-root jss226" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/2qEM2en1rEjwlxD2J24u54/a4f8aa75d871c8db2555af6d99a81efd/xt.svg" alt="logo"></div></a><a class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary" href="https://whitebit.com/" target="blank"><div class="MuiBox-root jss227" style="background-color: rgb(255, 255, 255); border-radius: 6px;"><img src="//images.ctfassets.net/vyse88cgwfbl/6oqaqrL1uvMgSts4NVB0Xc/a3c5648721670c0cd822ec9f5862e682/WhiteBIT.svg" alt="logo"></div></a></div></div></div></div></div></div>
-    
-<footer>
-    <div class="container text-center">
-        <p>&copy; 2024 Scripters Shop | Powered by Tether</p>
-        <div class="social-links">
-            <a href="https://twitter.com/scripters_shop" target="_blank" class="text-light">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://github.com/scripters-shop" target="_blank" class="text-light">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
