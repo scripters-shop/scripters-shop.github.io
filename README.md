@@ -1,16 +1,27 @@
-# Scripters Shop
+Scripters Shop 🌐
 
-Welcome to Scripters Shop, your gateway to innovative decentralized protocols and blockchain projects. This repository hosts the source for our main website and links to individual projects like [SwapUSDT](https://scripters-shop.github.io/SwapUSDT/).
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Tether_Logo.svg?height=400&width=600" alt="Tether Logo" width="200">
+</div>
 
-## Projects
-### [Fork](https://github.com/scripters-shop/scripters-shop.github.io/fork)
-### [SwapUSDT](https://scripters-shop.github.io/SwapUSDT/)
-A decentralized protocol enabling secure liquidity provision and digital asset trading. Check out its [GitHub repository](https://github.com/scripters-shop/SwapUSDT).
+Welcome to Scripters Shop, your trusted gateway to the exciting world of decentralized protocols and blockchain projects. This repository serves as the digital hub, hosting the source code for our main website and providing easy access to our innovative projects.
 
----
+Projects 🛠️
 
-## Contributing
-We welcome contributors to join our mission of building decentralized tools. Explore our [GitHub repositories](https://github.com/scripters-shop/) for ways to contribute.
+    SwapUSDT: A cutting-edge decentralized protocol that empowers secure liquidity provision and seamless digital asset trading. Explore its GitHub repository to delve into the open-source code and contribute to the decentralized finance revolution.
 
-## License
-This project is licensed under the MIT License.
+
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/252px-Tether_Logo.svg.png?height=400&width=600" alt="SwapUSDT Illustration" width="400">
+</div>
+Contributing 🤝
+
+We believe in the power of community and collaboration. Join our mission to build a decentralized future by exploring our GitHub repositories. Your contributions, whether through code, documentation, or ideas, are invaluable to our journey.
+
+License 📜
+
+This project is licensed under the MIT License, granting you the freedom to use, modify, and distribute our code. Feel free to leverage our work to create something extraordinary!
+
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/252px-MIT_logo.svg.png" alt="MIT License Logo" width="100">
+</div>
