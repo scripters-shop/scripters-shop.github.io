@@ -16,14 +16,14 @@
     <meta name="twitter:title" content="Scripters Shop | Tether Innovation">
     <meta name="twitter:description" content="Discover Tether-powered projects and contribute to the blockchain revolution. Join our community and shape the future of decentralized finance.">
     <meta name="twitter:image" content="https://scripters-shop.github.io/assets/images/og-image.png">
-    <meta name="google-site-verification" content="your-google-site-verification-code-here">
+    <meta name="google-site-verification" content="m0k1uOyx6PkuP127mtmcl8R7sWhFxPif4skuOxMJeOk">
     <title>Scripters Shop | Tether-Powered Protocols</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <link rel="canonical" href="https://scripters-shop.github.io" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Enhanced Tether Official Color Theme */
         :root {
             --tether-green: #26A17B;
             --tether-dark: #121212;
@@ -34,17 +34,30 @@
             --primary-bg: #171717;
             --primary-text: #E1E1E1;
             --highlight-color: #29B6F6;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --card-hover: rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease-in-out;
         }
 
         body {
             background-color: var(--primary-bg);
             color: var(--primary-text);
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
         .navbar {
             background-color: var(--highlight-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand i {
@@ -60,14 +73,27 @@
             color: var(--tether-green) !important;
         }
 
-        .card {
-            background-color: var(--primary-bg);
-            border: 1px solid var(--highlight-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .hero {
+            background: linear-gradient(145deg, #1E1E1E, #333);
+            padding: 120px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .card-title {
+        .hero h1 {
             color: var(--primary-text);
+            font-weight: 700;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--tether-secondary);
+            font-size: 20px;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 30px;
         }
 
         .btn-primary {
@@ -81,203 +107,182 @@
             border-color: #007b5e;
         }
 
-        .btn-outline-primary {
-            color: var(--highlight-color);
-            border-color: var(--highlight-color);
+        .card {
+            background-color: var(--primary-bg);
+            border: 1px solid var(--highlight-color);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 15px;
         }
 
-        .btn-outline-primary:hover {
-            background-color: var(--highlight-color);
-            color: var(--primary-bg);
-            border-color: var(--highlight-color);
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .hero {
-            background: linear-gradient(145deg, #1E1E1E, #333);
-            padding: 100px 0;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h1 {
+        .card-title {
             color: var(--primary-text);
-            font-weight: bold;
-            font-size: 48px;
         }
 
-        .lead {
-            color: var(--tether-secondary);
-            font-size: 18px;
-            max-width: 500px;
-            margin: auto;
+        .projects {
+            padding: 50px 0;
+            background-color: var(--primary-bg);
         }
 
         .projects .card-body {
             padding: 30px;
         }
 
-        .footer {
+        footer {
             background-color: var(--primary-bg);
             color: var(--primary-text);
-            padding: 30px;
+            padding: 50px 0;
         }
 
-        .footer a {
+        footer a {
             color: var(--primary-text);
             transition: color 0.3s;
         }
 
-        .footer a:hover {
+        footer a:hover {
             color: var(--tether-green);
         }
 
         .social-links a {
-            font-size: 24px;
-            margin-right: 15px;
+            font-size: 28px;
+            margin-right: 20px;
         }
 
-        .text-light {
-            color: var(--primary-text) !important;
-        }
-
-        .text-primary {
-            color: var(--highlight-color) !important;
-        }
-
-        /* Card Hover Effects */
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        .social-links a:hover {
+            color: var(--highlight-color);
         }
 
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
         }
-    </style>
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "WebSite",
-            "name": "Scripters Shop",
-            "url": "https://scripters-shop.github.io",
-            "description": "Explore Tether-powered decentralized protocols and contribute to the blockchain ecosystem. Join the decentralized finance revolution.",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Scripters Shop",
-                "logo": "https://scripters-shop.github.io/assets/images/logo.png"
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .btn-lg {
+                font-size: 16px;
+                padding: 12px 30px;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <i class="fas fa-code text-light"></i> Scripters Shop
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contribute">Contribute</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/scripters-shop" target="_blank">
-                                <i class="fab fa-github text-light"></i> GitHub
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code text-light"></i> Scripters Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contribute">Contribute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/scripters-shop" target="_blank">
+                            <i class="fab fa-github text-light"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="container">
+        <h1>Welcome to Scripters Shop</h1>
+        <p class="lead">Explore Tether-powered projects and join the blockchain revolution today. Shape the future of decentralized finance with us.</p>
+        <div class="d-flex justify-content-center gap-4">
+            <a href="#projects" class="btn btn-primary btn-lg">Explore Projects</a>
+            <a href="https://scripters.shop/" class="btn btn-primary btn-lg">Shop Now</a>
+            <a href="https://github.com/scripters-shop" class="btn btn-outline-primary btn-lg">View on GitHub</a>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="text-center text-light mb-5">Our Tether-Powered Projects</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">SwapUSDT</h3>
+                        <p class="card-text">A decentralized protocol powered by Tether. Secure liquidity provision and asset trading. Join us today!</p>
+                        <div class="d-flex gap-3">
+                            <a href="https://scripters-shop.github.io/SwapUSDT/" class="btn btn-primary">Launch App</a>
+                            <a href="https://github.com/scripters-shop/SwapUSDT" class="btn btn-outline-secondary">
+                                <i class="fab fa-github"></i> Repository
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to Scripters Shop</h1>
-            <p class="lead">Your gateway to decentralized finance. Explore Tether-powered projects and join the blockchain revolution today.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#projects" class="btn btn-primary btn-lg">Explore Projects</a>
-                <a href="https://scripters.shop/" class="btn btn-primary btn-lg">Shop Now</a>
-                <a href="https://github.com/scripters-shop" class="btn btn-outline-primary btn-lg">View on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects py-5">
-        <div class="container">
-            <h2 class="text-center text-light mb-5">Our Tether-Powered Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">SwapUSDT</h3>
-                            <p class="card-text">A decentralized protocol powered by Tether. Explore secure liquidity provision and digital asset trading. Join our open-source project and contribute to the Tether ecosystem.</p>
-                            <div class="d-flex gap-2">
-                                <a href="https://scripters-shop.github.io/SwapUSDT/" class="btn btn-primary">Launch App</a>
-                                <a href="https://github.com/scripters-shop/SwapUSDT" class="btn btn-outline-secondary"><i class="fab fa-github"></i> Repository</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Coming Soon</h3>
-                            <p class="card-text">Stay tuned for our next innovative Tether-powered project. Follow us on GitHub to be a part of the Tether revolution and contribute to the decentralized future.</p>
-                            <a href="https://github.com/scripters-shop" class="btn btn-outline-primary">Follow Updates</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contribute" class="contribute py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4 text-light">Contribute to Our Tether-Powered Projects</h2>
-                    <p class="lead mb-4">Join our community of contributors and help shape the future of decentralized finance. Your contributions are vital to the Tether ecosystem and the blockchain revolution.</p>
-                    <ul class="list-unstyled text-light">
-                        <li class="mb-3"><i class="fas fa-code-branch text-primary me-2"></i> Fork our repositories on GitHub</li>
-                        <li class="mb-3"><i class="fas fa-code text-primary me-2"></i> Submit pull requests to contribute code</li>
-                        <li class="mb-3"><i class="fas fa-bug text-primary me-2"></i> Report issues and help us improve</li>
-                    </ul>
-                    <a href="https://github.com/scripters-shop" class="btn btn-primary">Start Contributing</a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/252px-Tether_Logo.svg.png?height=400&width=600" alt="Tether Contribution Illustration" class="img-fluid">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text">Stay tuned for more Tether-powered projects. Follow us on GitHub for the latest updates!</p>
+                        <a href="https://github.com/scripters-shop" class="btn btn-outline-primary">Follow Updates</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-<footer class="footer">
+<section id="contribute" class="contribute">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4 text-light">Contribute to Our Projects</h2>
+                <p class="lead mb-4">Join the community to contribute code, report issues, and enhance the ecosystem. Together, we will shape the future of decentralized finance!</p>
+                <ul class="list-unstyled text-light">
+                    <li><i class="fas fa-code-branch text-primary me-2"></i> Fork our repositories</li>
+                    <li><i class="fas fa-code text-primary me-2"></i> Submit pull requests</li>
+                    <li><i class="fas fa-bug text-primary me-2"></i> Report issues</li>
+                </ul>
+                <a href="https://github.com/scripters-shop" class="btn btn-primary">Start Contributing</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tether_Logo.svg/252px-Tether_Logo.svg.png?height=400&width=600" alt="Tether Logo" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
     <div class="container text-center">
         <p>&copy; 2024 Scripters Shop | Powered by Tether</p>
         <div class="social-links">
-            <a href="https://twitter.com/scripters_shop" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/scripters-shop" target="_blank" class="text-light"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="partnership">
-            <h4 class="text-light mt-4">Our Partners</h4>
-            <img src="https://www.seoreviewtools.com/wp-content/uploads/api-users-accreditations-1.png.webp" alt="Partnership Accreditation" class="img-fluid" style="max-width: 150px; margin-top: 20px;">
+            <a href="https://twitter.com/scripters_shop" target="_blank" class="text-light">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/scripters-shop" target="_blank" class="text-light">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
     </div>
 </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
